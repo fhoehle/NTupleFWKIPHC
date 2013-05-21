@@ -130,7 +130,7 @@ if [[ $src != "" ]] ; then
 	echo "###############################"
 	execFile=`echo $src | awk -F '.' '{print $1}'`
 	CurrLib=`LatestLib`
-	g++  -Wall -l:$NTUPLEANA_PATH/../../../MiniTreeFormat/NTFormat/src/libNTuple.so  -L JetMETObjects   -I /opt/sbg/data/data1/cms/jandrea/LHAPDF/lhapdf-5.8.5/final/include -lLHAPDF -L /opt/sbg/data/data1/cms/jandrea/LHAPDF/lhapdf-5.8.5/final/lib  -l:$NTUPLEANA_PATH/../.lib/$CurrLib  -l:$NTUPLEANA_PATH/../libJetMETObjects.so -I `root-config --incdir` -L $ROOTSYS/lib -lGenVector -lCore -lCint -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -pthread -lm -ldl -rdynamic -lProof -lProofPlayer $src -o $execFile
+	g++  -Wall -l:$NTUPLEANA_PATH/../../../MiniTreeFormat/NTFormat/src/libNTuple.so  -L JetMETObjects   -I /opt/sbg/data/data1/cms/jandrea/LHAPDF/lhapdf-5.8.5/final/include -lLHAPDF -L /opt/sbg/data/data1/cms/jandrea/LHAPDF/lhapdf-5.8.5/final/lib  -l:$NTUPLEANA_PATH/../libNTupleAna.so -L:$NTUPLEANA_PATH/../libNTupleAna.so  -l:$NTUPLEANA_PATH/../../../JR_Standalone/lib/libJetMETObjects.so -I `root-config --incdir` -L $ROOTSYS/lib -lGenVector -lCore -lCint -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -pthread -lm -ldl -rdynamic -lProof -lProofPlayer $src -o $execFile
  	code=$?
 	echo "###############################"
 	if [ $code -eq 0 ] ; then

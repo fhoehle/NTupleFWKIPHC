@@ -1,5 +1,6 @@
 ###
 CVS/
+JR_Standalone/tmp/
 ##
 *.pyc
 *.so

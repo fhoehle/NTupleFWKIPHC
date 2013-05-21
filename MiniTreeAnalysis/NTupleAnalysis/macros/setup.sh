@@ -5,7 +5,8 @@ echo "#################################"
 dir=`pwd`
 export NTUPLEANA_PATH=$dir
 export NTUPLEANA=$dir
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lib:$dir/../../../MiniTreeFormat/NTFormat/src/.:$dir/../.lib/
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lib:$dir/../../../MiniTreeFormat/NTFormat/src/.:$dir/
+#$dir/../.lib/
 export NTUPLEDATAFORMAT_PATH=$dir/../../../MiniTreeFormat/NTFormat/
 
 
