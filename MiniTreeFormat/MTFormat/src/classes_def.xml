@@ -1,0 +1,37 @@
+<lcgdict>
+  <class pattern="edm::Wrapper<*>" />
+  
+  <class name="std::vector<TLorentzVector>"/>
+  
+  <class name="TopTree::MTLepton"/>
+  <class name="TopTree::MTElectron"/>
+  <class name="TopTree::MTMuon"/>
+  <class name="TopTree::MTTau"/>
+  <class name="TopTree::MTJet"/>
+  <class name="TopTree::MTMET"/>
+  <class name="TopTree::MTJetMet"/>
+  <class name="TopTree::MTVertex"/>
+  <class name="TopTree::MTTrack"/>
+  <class name="TopTree::MTPhoton"/>
+  <class name="std::vector<TopTree::MTJet>"/>
+  <class name="std::vector<TopTree::MTJetMet>"/>
+  <class name="std::vector<TopTree::MTElectron>"/>
+  <class name="std::vector<TopTree::MTMuon>"/>
+  <class name="std::vector<TopTree::MTTau>"/>
+  <class name="std::vector<TopTree::MTVertex>"/>
+  <class name="std::vector<TopTree::MTTrack>"/>
+  <class name="std::vector<TopTree::MTPhoton>"/>
+  <class name="TopTree::MTCollection<TopTree::MTJet>"/>  
+  <class name="TopTree::MTCollection<TopTree::MTTau>"/> 
+  <class name="std::vector<TopTree::MTCollection<TopTree::MTTau>>"/>   
+  <class name="TopTree::MTEvent"/>
+  
+  <class name="TopTree::TTbarEvtMC"/>
+  <class name="TopTree::WJetsEvtMC"/>
+  <class name="TopTree::ZJetsEvtMC"/>
+  <class name="TopTree::WWEvtMC"/>
+
+  <class name="std::vector<TopTree::MTPU>"/>
+  <class name="TopTree::MTPU"/>
+  
+</lcgdict>

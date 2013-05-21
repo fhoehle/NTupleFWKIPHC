@@ -1,0 +1,41 @@
+<lcgdict>
+  <class pattern="edm::Wrapper<*>" />
+  
+  <class name="std::map<int,std::vector<int> >"/>
+  <class name="std::pair<float, std::string>"/>
+  <class name="std::vector<std::pair<float, std::string> >"/>
+  
+  <class name="TopTree::NTLepton"/>
+  <class name="TopTree::NTElectron"/>
+  <class name="TopTree::NTMuon"/>
+  <class name="TopTree::NTTau"/>
+  <class name="TopTree::NTJet"/>
+  <class name="TopTree::NTMET"/>
+  <class name="TopTree::NTJetMet"/>
+  <class name="TopTree::NTVertex"/>
+  <class name="TopTree::NTTrack"/>
+  <class name="TopTree::NTPhoton"/>
+  <class name="TopTree::TopDecaysMC"/>
+  <class name="TopTree::WDecaysMC"/>
+  <class name="TopTree::ZDecaysMC"/>
+  <class name="std::vector<TopTree::NTJet>"/>
+  <class name="std::vector<TopTree::NTJetMet>"/>
+  <class name="std::vector<TopTree::NTElectron>"/>
+  <class name="std::vector<TopTree::NTMuon>"/>
+  <class name="std::vector<TopTree::NTTau>"/>
+  <class name="std::vector<TopTree::NTVertex>"/>
+  <class name="std::vector<TopTree::NTTrack>"/> 
+  <class name="std::vector<TopTree::NTPhoton>"/> 
+  <class name="std::vector<TopTree::TopDecaysMC>"/>
+  <class name="std::vector<TopTree::WDecaysMC>"/>
+  <class name="std::vector<TopTree::ZDecaysMC>"/>
+  <class name="TopTree::NTCollection<TopTree::NTJet>"/>  
+  <class name="TopTree::NTCollection<TopTree::NTTau>"/> 
+  <class name="std::vector<TopTree::NTCollection<TopTree::NTTau>>"/>   
+  <class name="TopTree::NTEvent"/>
+
+  <class name="std::vector<TopTree::NTPU>"/> 
+  <class name="TopTree::NTPU"/>
+
+  
+</lcgdict>
