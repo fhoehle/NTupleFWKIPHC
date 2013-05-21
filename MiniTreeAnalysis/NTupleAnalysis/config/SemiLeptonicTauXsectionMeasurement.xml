@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!-- ex with eqlumi <d name="TTJets" add="1" color="4" ls="1" lw="1" normf="0.000437334" xsection="414" filenames="/user/echabert/TopTree_Prod229/TopTree_TTJets.root" EqLumi="2287."/> -->
+<!-- ex with NofEvts <d name="TTJets" add="1" color="4" ls="1" lw="1" normf="0.000437334" xsection="414" filenames="/user/echabert/TopTree_Prod229/TopTree_TTJets.root" NofEvts="946644"/> -->
+<!-- ex with PreselEff NofPSEvts <d name="TTJets" add="1" color="4" ls="1" lw="1" normf="0.000437334" xsection="414" filenames="/user/echabert/TopTree_Prod229/TopTree_TTJets.root" PreselEff="0.2307" NofEvts="218404"/> -->
+
+<Datasets>
+<!-- add = 1 : run on the sample
+     add = 0 : do not run on the sample
+     isData = 1 for data; = 0  for MC
+     ls = lineStyle //not yet used
+     lw = lineWidth //not yet used
+     !! important:
+	2 of the 3 information need to be filled
+		- normf (normalisation factor - default = 1)
+		- xsection (cross-section of the processus if it's MC - default = 1)
+		- NofEvts (could be lower than the size of the file. If it's higher or equal to the size, the program will run on the full sample)
+     Preselection
+	if a preselection has been applied before use
+		- PreselEff
+		- NofPSEvts instead of NofEvts
+
+
+
+<d name="DATA" add="1" isData="1" color="2" ls="1" lw="2" normf="0.0958844" xsection="157.5" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/MultiJet_PF2PAT_triggermatch45TauJet2-NOPFNOPU-json2fb_pres-Run2011A-May10ReReco-v1-5Aug2011-PromptReco-v4-v6_3pfjets40tau40_trig/*.root"/>
+<d name="DATA" add="1" isData="1" color="2" ls="1" lw="2" normf="1" xsection="1" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/MultiJet_PF2PAT_triggermatch40TauJet2-NOPFNOPU-json2fb_pres-filter-tauOrigin-Run2011B-PromptReco-v1_3pfjets_1tau/*.root"/>
+
+-->
+<d name="DATA" add="1" isData="1" color="2" ls="1" lw="2" normf="0.0958844" xsection="157.5" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/MultiJet_PF2PAT_triggermatch40TauJet2-NOPFNOPU-json2fb_pres-filter-tauOrigin-Run2011B-May10ReReco-v1_PromptReco-v6_3pfjets_1tau/*.root"/>
+<!--
+<d name="TTbarTauHQQ" add="1" isData="0" color="2" ls="1" lw="2" normf="0.0958844" xsection="164" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/TTJets_TuneZ2_7TeV-madgraph-tauola_OOTPU_JEC_HLT2_pres_TauHQQ_3pfjets40tau40/*.root "/>
+<d name="TTbarQQQQ" add="1" isData="0" color="3" ls="1" lw="2" normf="0.445" xsection="164" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/TTJets_TuneZ2_7TeV-madgraph-tauola_OOTPU_JEC_HLT2_pres_QQQQ_3pfjets40tau40/*.root"/>
+<d name="TTbarLQQ" add="1" isData="0" color="3" ls="1" lw="2" normf="0.407" xsection="164" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/TTJets_TuneZ2_7TeV-madgraph-tauola_OOTPU_JEC_HLT2_pres_LQQ_3pfjets40tau40/*.root"/>
+<d name="TTbarTauHTauH" add="1" isData="0" color="3" ls="1" lw="2" normf="0.445" xsection="164" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/TTJets_TuneZ2_7TeV-madgraph-tauola_OOTPU_JEC_HLT2_pres_TauHTauH_3pfjets40tau40/*.root"/>
+<d name="TTbarETauH" add="1" isData="0" color="3" ls="1" lw="2" normf="0.407" xsection="164" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/TTJets_TuneZ2_7TeV-madgraph-tauola_OOTPU_JEC_HLT2_pres_LTauH_3pfjets40tau40/*.root"/>
+<d name="TTbarMTauH" add="1" isData="0" color="3" ls="1" lw="2" normf="0.407" xsection="164" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/TTJets_TuneZ2_7TeV-madgraph-tauola_OOTPU_JEC_HLT2_pres_LTauH_3pfjets40tau40/*.root"/>
+<d name="WJetsToLNu" add="1" isData="0" color="4" ls="1" lw="2" normf="0.0406704" xsection="31314" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/WJetsToLNu_TuneZ2_7TeV-madgraph-tauola_OOTPU_JEC_HLT_3pfjets40tau40/*.root"/>
+<d name="DYJetsToLL" add="1" isData="0" color="5" ls="1" lw="2" normf="0.130285" xsection="3048" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/DYJetsToLL_TuneZ2_M-50_7TeV-madgraph-tauola_OOTPU_JEC_HLT_3pfjets40tau40/*.root"/>
+
+<d name="SingletoptW" add="1" isData="0" color="2" ls="1" lw="2" normf="0.0958844" xsection="7.87" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/T_TuneZ2_tW-channel-DR_7TeV-powheg-tauola/*.root"/>
+<d name="SingletopBartW" add="1" isData="0" color="2" ls="1" lw="2" normf="0.0958844" xsection="7.87" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/Tbar_TuneZ2_tW-channel-DR_7TeV-powheg-tauola/*.root"/>
+<d name="SingletopS" add="1" isData="0" color="2" ls="1" lw="2" normf="0.0958844" xsection="1.44" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/Tbar_TuneZ2_s-channel-DR_7TeV-powheg-tauola/*.root"/>
+<d name="SingletopT" add="1" isData="0" color="2" ls="1" lw="2" normf="0.0958844" xsection="41.92" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/T_TuneZ2_t-channel-DR_7TeV-powheg-tauola/*.root"/>
+<d name="SingletopBarT" add="1" isData="0" color="2" ls="1" lw="2" normf="0.0958844" xsection="22.65" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/Tbar_TuneZ2_t-channel-DR_7TeV-powheg-tauola/*.root"/>
+
+<!--
+
+
+<d name="QCD1" add="1" isData="0"  color="6" ls="1" lw="2" normf="0.00623866" xsection="8.159e+08" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_15to30_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD2" add="1" isData="0"  color="6" ls="1" lw="2" normf="0.0940443" xsection="5.312e+07" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_30to50_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD3" add="1" isData="0"  color="6" ls="1" lw="2" normf="0.297637" xsection="6.359e+06" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_50to80_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD4" add="1" isData="0"  color="6" ls="1" lw="2" normf="0.482533" xsection="7.843e+05" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_80to120_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD5" add="1" isData="0"  color="6" ls="1" lw="2" normf="0.598555" xsection="1.151e+05" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_120to170_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD6" add="1" isData="0"  color="6" ls="1" lw="2" normf="0.681445" xsection="2.426e+04" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_170to300_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD7" add="1" isData="0"  color="6" ls="1" lw="2" normf="0.742503" xsection="1.168e+03" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_300to470_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD8" add="1" isData="0"  color="6" ls="1" lw="2" normf="0.751173" xsection="7.022e+01" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_470to600_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD9" add="1" isData="0"  color="6" ls="1" lw="2" normf="0.741766" xsection="1.555e+01" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_1_4_v
+<d name="QCD10" add="1" isData="0" color="6" ls="1" lw="2" normf="0.721619" xsection="1.844e+00" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_800to1000_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD11" add="1" isData="0" color="6" ls="1" lw="2" normf="0.692203" xsection="3.321e-01" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_1000to1400_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD12" add="1" isData="0" color="6" ls="1" lw="2" normf="0.635101" xsection="1.087e-02" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_1400to1800_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+<d name="QCD13" add="1" isData="0" color="6" ls="1" lw="2" normf="" xsection="3.575e-04" filenames="/opt/sbg/data/data1/cms/lebihan/analysis_4_2_5/QCD_Pt_1800_TuneZ2_7TeV_pythia6_skim3pfJetTau/*.root" />
+-->
+</Datasets>
+
+<Analysis>
+<!--
+	DataType = 0: MC
+	DataType = 1: Data
+	DataType = 2: Data & MC
+	Luminosity in in pb-1
+-->
+<a type="General" Verbosity="1" DataType="1" Luminosity="2045.79" PUWeightFileName="pudist_735.root"/>
+</Analysis>
+
+<Selection>
+<s type="Electron" PtThreshold="15." EtaThreshold="2.5" RelIso="0.15" D0Cut="0.04" VertexMatchThr="1." DElectronETSCThr="15" RemuThr="0.1"/>
+<s type="Muon"     PtThreshold="15." EtaThreshold="2.4" RelIso="0.15" D0Cut="0.02" VertexMatchThr="1." NofValidHits="0"  NofValidTkHits="10" NormChi2="10" />
+<s type="Tau"      Algo="selectedPatTausPF2PAT" PtThreshold="45." EtaThreshold="2.3" RelIso="0.15" D0Cut="0.04" VertexMatchThr="1." TauLeadTrkPtCut="10."/>
+<s type="Vertex"   VertexNdofThr="4" VertexZThr="24."   VertexRhoThr="2." />
+<s type="Jet"      Algo="pf" PtThreshold="20." EtaThreshold="2.4" />
+</Selection>
+
+<SemiLeptonicTauSelection>
+<!-- btagAlgo = 
+0 for TrackCounting
+1 for SecondarayVertex
+2 for SM
+-->
+<s btagAlgo="0" btagDiscriCut="3.3" NofBtagJets="1" METCut="15." />
+</SemiLeptonicTauSelection>
+
+<Weight>
+<!--
+  int flag :     0 = do not apply,  1 = apply
+  int methodb :  0 = SF w discri cut, 1 = Eff_data w/o discri cut, 2 = SF*Eff_MC w/o discri cut
+  int systb :    0 = weight, 1 = weight + error, 2 = weight - error
+-->
+<s type="Btag" flag="1" methodb="2" systb="0" />
+</Weight>
+

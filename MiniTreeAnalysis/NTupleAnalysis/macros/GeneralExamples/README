@@ -1,0 +1,11 @@
+ ==== Analyzing the NTuple ====
+
+# requirements:
+ - having root set up (ROOSTSYS, ...)
+ - having libNTuple.so in your ~/lib
+ - having ~/lib in your LD_LIBRARY_PATH
+ otherwise do : export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/lib
+
+# How to use the example ?
+ - ./compile [-e -r] Example.C   #compile the code using root-libraries & libNTuple.so
+ - ./Example

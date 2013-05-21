@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+
+<Datasets>
+<!-- the xsection here has no influence on the result ! !-->
+<d name="Data"     add="1" isData="1" color="2" ls="1" lw="2" normf="1" xsection="1."   filenames="" />
+<d name="TTbarSig" add="1" isData="0" color="2" ls="1" lw="2" normf="1" xsection="164." filenames="" />
+<d name="TTbarBkg" add="1" isData="0" color="2" ls="1" lw="2" normf="1" xsection="164." filenames="" />
+<d name="Zjets"    add="1" isData="0" color="2" ls="1" lw="2" normf="1" xsection="1"    filenames="" />
+<d name="Wjets"    add="1" isData="0" color="2" ls="1" lw="2" normf="1" xsection="1"    filenames="" />
+<d name="StW"      add="1" isData="0" color="2" ls="1" lw="2" normf="1" xsection="1"    filenames="" />
+<d name="VV"       add="1" isData="0" color="2" ls="1" lw="2" normf="1" xsection="1"    filenames="" /> 
+<!--d name="QCD" add="1" isData="0" color="2" ls="1" lw="2" normf="1" xsection="1" filenames="" /-->
+<!--d name="Zjets2"    add="0" isData="0" color="2" ls="1" lw="2" normf="1" xsection="1"    filenames="" />
+<d name="Zjets3"    add="0" isData="0" color="2" ls="1" lw="2" normf="1" xsection="1"    filenames="" />
+<d name="Zjets4"    add="0" isData="0" color="2" ls="1" lw="2" normf="1" xsection="1"    filenames="" /-->
+</Datasets>
+
+<Analysis>
+<!--
+	DataType = 0: MC
+	DataType = 1: Data
+	DataType = 2: Data & MC
+	Luminosity in in pb-1
+-->
+<!--a type="General" Verbosity="2" DataType="0" Luminosity="36.1" LumiError="3.971"/-->
+<!--a type="General" Verbosity="2" DataType="0" Luminosity="2178" LumiError="130"/-->
+<!-- DataTye has no influence here !-->
+<a type="General" Verbosity="2" DataType="0" Luminosity="2173" LumiError="98."/>
+</Analysis>
+
+<EvtNumbers>
+<!-- Dont forget to take the SF into account in the signal nof -->
+	<Channel channel="mumu">
+		<d name="StW"      number="49.0"  errm="14.6"  errp="14.6"   isDD="0" isASyst="1"/>
+		<d name="VV"       number="14.5"  errm="4.3"   errp="4.3"    isDD="0" isASyst="1"/>
+		<d name="Wjets"    number="11.9"  errm="7.1"   errp="7.1"    isDD="1" isASyst="1"/>
+		<d name="Zjets"    number="214.6" errm="53.6"  errp="53.6"   isDD="1" isASyst="1"/>
+		<!--d name="Zjets2"    number="147.9" errm="19.5"  errp="19.5"   isDD="1" isASyst="1"/>
+		<d name="Zjets3"    number="57.2" errm="12.0"  errp="12.0"   isDD="1" isASyst="1"/>
+		<d name="Zjets4"    number="11.0" errm="4.6"  errp="4.6"   isDD="1" isASyst="1"/-->
+		<d name="TTbarBkg" number="3.2"  errm="0.40"  errp="0.40"   isDD="0" isASyst="0"/>
+	</Channel>
+	<Channel channel="ee">
+		<d name="StW"      number="41.0"   errm="12.3"   errp="12.3"  isDD="0" isASyst="1"/>
+		<d name="VV"       number="14.0"   errm="4.2"    errp="4.2"   isDD="0" isASyst="1"/>
+		<d name="Wjets"    number="0.8"    errm="6.4"    errp="6.4"   isDD="1" isASyst="1"/>
+		<d name="Zjets"    number="136.1"  errm="34.0"   errp="34.0"  isDD="1" isASyst="1"/>
+		<!--d name="Zjets2"    number="91.9" errm="15.1"  errp="15.1"   isDD="1" isASyst="1"/>
+		<d name="Zjets3"    number="23.8" errm="7.0"  errp="7.0"   isDD="1" isASyst="1"/>
+		<d name="Zjets4"    number="20.5" errm="7.6"  errp="7.6"   isDD="1" isASyst="1"/-->
+		<d name="TTbarBkg" number="9.1"   errm="7.1"    errp="7.1"   isDD="0" isASyst="0"/>
+	</Channel>
+	<Channel channel="emu">
+		<d name="StW"      number="150.0"  errm="45.0"   errp="45.0"   isDD="0" isASyst="1"/>
+		<d name="VV"       number="52.4"   errm="15.7"   errp="15.7"   isDD="0" isASyst="1"/>
+		<d name="Wjets"    number="62.0"   errm="16.4"   errp="16.4"   isDD="1" isASyst="1"/>
+		<d name="Zjets"    number="219.4"  errm="65.8"   errp="65.8"   isDD="1" isASyst="1"/>
+		<!--d name="Zjets2"    number="176.2" errm="53."  errp="53."   isDD="1" isASyst="0"/>
+		<d name="Zjets3"    number="37.5" errm="11.2"  errp="11.2"   isDD="1" isASyst="0"/>
+		<d name="Zjets4"    number="6.1" errm="1.8"  errp="1.8"   isDD="1" isASyst="0"/-->
+		<d name="TTbarBkg" number="23.4"   errm="11.4"	 errp="11.4"   isDD="0" isASyst="0"/>
+	</Channel>
+</EvtNumbers>
+
+
+
+<SystematicsEffect>
+<!--Lepton EFficiency -->
+  <Syst name="LEF" doIt="0" >
+	<a channel="ee"    effm1s="0.999" effp1s="1.001" />
+	<a channel="emu"   effm1s="0.999" effp1s="1.001" />
+	<a channel="mumu"  effm1s="0.999" effp1s="1.001" />
+  </Syst>
+<!--Trigger EFficiency -->
+  <Syst name="TEF" doIt="0" >
+	<a channel="ee"    effm1s="0.942" effp1s="0.978" />
+	<a channel="emu"   effm1s="1.001" effp1s="1.015" />
+	<a channel="mumu"  effm1s="0.963" effp1s="0.991" />
+  </Syst>
+<!--Lepton combined-->
+  <Syst name="LEPTON" doIt="0" >
+	<a channel="ee"    effm1s="0.961" effp1s="1.039" />
+	<a channel="emu"   effm1s="0.964" effp1s="1.036" />
+	<a channel="mumu"  effm1s="0.957" effp1s="1.043" />
+  </Syst>
+<!--Q2-->
+  <Syst name="Q2" doIt="0" >
+	<a channel="ee"   effm1s="0.9315" effp1s="1.0685" />
+	<a channel="emu"  effm1s="0.9315" effp1s="1.0685" />
+	<a channel="mumu" effm1s="0.9315" effp1s="1.0685" />
+  </Syst>
+<!--ME-PS-Thr-->
+  <Syst name="ME-PS-Thr" doIt="0" >
+	<a channel="ee"   effm1s="0.987" effp1s="1.013" />
+	<a channel="emu"  effm1s="0.987" effp1s="1.013" />
+	<a channel="mumu" effm1s="0.987" effp1s="1.013" />
+  </Syst>
+<!--ISR/FSR -->
+  <Syst name="ISR/FSR" doIt="0" >
+	<a channel="ee"    effm1s="0.989" effp1s="1.011" />
+	<a channel="emu"   effm1s="0.989" effp1s="1.011" />
+	<a channel="mumu"  effm1s="0.989" effp1s="1.011" />
+  </Syst>
+<!--Mtop-->
+  <Syst name="Mtop" doIt="0" >
+	<a channel="ee"    effm1s="0.987" effp1s="1.013" />
+	<a channel="emu"   effm1s="0.987" effp1s="1.013" />
+	<a channel="mumu"  effm1s="0.987" effp1s="1.013" />
+  </Syst>
+<!--Pile-Up -->
+  <Syst name="PU" doIt="0" >
+	<a channel="ee"   efbplfm1s="0.98" effp1s="1.02" />
+	<a channel="emu"  effm1s="0.98" effp1s="1.02" />
+	<a channel="mumu" effm1s="0.98" effp1s="1.02" />
+</Syst>
+<!--PDF-->
+  <Syst name="PDF" doIt="0" >
+	<a channel="ee"    effm1s="0.99" effp1s="1.01" />
+	<a channel="emu"   effm1s="0.99" effp1s="1.01" />
+	<a channel="mumu"  effm1s="0.99" effp1s="1.01" />
+  </Syst>
+</SystematicsEffect>
+
+<PLRMeasurement>
+<!-- BR=0.16 (include tau decay) -->
+<!-- InterpolMethod: linear - expo - cubic -->
+	<General isLumiASyst="0" rootFileName="/opt/sbg/data/data1/cms/echabert/Xsection2012/CMSSW_4_2_8_patch7/src/MiniTreeAnalysis/NTupleAnalysis_4nov/macros/Templates_GG/templates_PLR_wWjets_2_renormalized_JES3_withAddNuisParam.root"
+		  doPseudoExp="0" NofPseudoExp="10000" InterpolMethod="expo">
+	</General>
+	<Channels>
+		<c doIt="1" name="mumu" SignalDatasetName="TTbarSig" BR="1" />
+		<c doIt="1" name="ee"   SignalDatasetName="TTbarSig" BR="1" />
+		<c doIt="1" name="emu"  SignalDatasetName="TTbarSig" BR="1" />
+	</Channels>
+	<Parameters>
+		<!-- Expectation: predicted value of the free parameter
+		     For PLR: "npoints" are used 
+		     For Pseudo-exp, plots with "nbins"
+		     range [xmim,xmax] 
+		     for errors [xErrmin, xErrmax]
+		     step: step of the value of the free parameter used in TMinuit (! (xmax-xmin)/npoints)
+		-->
+		<p doIt="1" name="SignalXsection" Expectation="164" npoints="40" nbins="130" xmin="100" xmax="250" xErrmin="0" xErrmax="100" step="1." option=""/>
+		<p doIt="0" name="sfb" Expectation="1." npoints="25" nbins="100" xmin="0.6" xmax="1.4" xErrmin="0." xErrmax="0.1" step="0.05" option="graph" />
+	</Parameters>
+	<Histos>
+		<!--h doIt="1" name="NjetsNBjets" dim="2"/
+		<h doIt="0" name="Njets" dim="1"/>
+		<h doIt="0" name="Count" dim="1"/>
+		-->
+		<h doIt="1" name="NjetsNBjets_6_0.244" dim="2"/>
+	</Histos>
+	<NuisanceParameters>
+		<!--n doIt="1" name="SignalXsection" Expectation="164" ErrNeg="32.8" ErrPos="32.8" option="" /-->
+		<!-- For JES - MES - EES, we used "gaussienne centree reduite", ie Expectation="0" ErrNeg="1" ErrPos="1" It correspond to a number of sigmas -->
+		<n doIt="0" name="JES" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="1"/>
+		<n doIt="0" name="JES" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="2"/>
+		<n doIt="1" name="JESee" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="2"/>
+		<n doIt="1" name="JESemu" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="2"/>
+		<n doIt="1" name="JESmumu" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="2"/>
+		<n doIt="1" name="Q2" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="0"/>
+		<n doIt="1" name="match" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="0"/>
+		<n doIt="0" name="JES2j" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="0"/>
+		<n doIt="0" name="JES3j" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="0"/>
+		<n doIt="0" name="JES4j" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="0"/>
+		<n doIt="0" name="MES" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="0"/>
+		<n doIt="0" name="EES" Expectation="0" ErrNeg="1" ErrPos="1" option="" type="0"/>
+		<!-- For sfb and sfl, Expectation="1" corresponds to the nominal to MC distribution. ErrNeg and ErrPos corrspond to the uncertainties on sfb, sfl (0.3 means 30%)  -->
+		<!-- at false for Count and NJets -->
+		<n doIt="1" name="sfb"  Expectation="1." ErrNeg="0.1" ErrPos="0.1" option="graph" />
+		<n doIt="1" name="sfl"  Expectation="1.07" ErrNeg="0.11" ErrPos="0.11" option="graph" />
+	</NuisanceParameters>
+</PLRMeasurement>
+

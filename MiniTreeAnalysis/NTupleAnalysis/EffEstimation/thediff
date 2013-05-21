@@ -1,0 +1,407 @@
+1,2c1,4
+< #include "../interface/SFBweight.h"
+< #include "../../Tools/interface/FileExists.h"
+---
+> // Revision du 13 avril 2012
+> 
+> #include "EffEstimation/interface/SFBweight.h"
+> #include "Tools/interface/FileExists.h"
+107a110,117
+>          // for 2011 data : the name of histo for SF_b has changed!
+> 	 // --> use of h_MUJETSWPBTAGCSVL_BTAGBEFFCORR for example
+> 	 // --> need to modify method_origin1_ by additional yearbtag prefix :)
+>          //     MUJETSWP for mu+jet SF 
+>          //     TTBARWP for ttbar SF 
+> 	 // see https://hypernews.cern.ch/HyperNews/CMS/get/btag/879.html
+> 	 // and https://twiki.cern.ch/twiki/bin/viewauth/CMS/BtagPOG#2011_Data_and_MC
+>          std::string yearbtag = "MUJETSWP";
+114c124
+<                     method_origin1_="BTAG"+algoname+"L";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"L";
+119c129
+<                     method_origin1_="BTAG"+algoname+"M";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"M";
+122a133
+> /*
+125c136
+<                     method_origin1_="BTAG"+algoname+"M";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"M";
+127a139
+> */
+137c149
+<                     method_origin1_="BTAG"+algoname+"M";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"M";
+139a152
+> /*
+142c155
+<                     method_origin1_="BTAG"+algoname+"M";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"M";
+145a159
+> */
+155c169
+<                     method_origin1_="BTAG"+algoname+"M";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"M";
+160c174
+<                     method_origin1_="BTAG"+algoname+"T";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"T";
+163a178
+> /*
+166c181
+<                     method_origin1_="BTAG"+algoname+"M";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"M";
+168a184
+> */
+178c194
+<                     method_origin1_="BTAG"+algoname+"T";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"T";
+191c207
+<                     method_origin1_="BTAG"+algoname+"L";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"L";
+196c212
+<                     method_origin1_="BTAG"+algoname+"M";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"M";
+201c217
+<                     method_origin1_="BTAG"+algoname+"T";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"T";
+214c230
+<                     method_origin1_="BTAG"+algoname+"L";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"L";
+219c235
+<                     method_origin1_="BTAG"+algoname+"M";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"M";
+224c240
+<                     method_origin1_="BTAG"+algoname+"T";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"T";
+237c253
+<                     method_origin1_="BTAG"+algoname+"L";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"L";
+242c258
+<                     method_origin1_="BTAG"+algoname+"M";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"M";
+247c263
+<                     method_origin1_="BTAG"+algoname+"T";
+---
+>                     method_origin1_=yearbtag+"BTAG"+algoname+"T";
+269c285,286
+<   string fullFileName(getenv( "CMSSW_BASE" )+string("/src/MiniTreeAnalysis/NTupleAnalysis/macros/data/")+fileName);
+---
+>   //string fullFileName(getenv( "CMSSW_BASE" )+string("/src/NTuple/NTupleAnalysis/macros/data/")+fileName);
+>   string fullFileName(string("/opt/sbg/data/data1/cms/jandrea/JLAgram_06072012/CMSSW_4_2_8_patch7/src/NTuple/NTupleAnalysis/macros/data/")+fileName);
+341c358,359
+< 	string fullFileName(getenv( "CMSSW_BASE" )+string("/src/MiniTreeAnalysis/NTupleAnalysis/macros/data/")+fileName);
+---
+> 	//string fullFileName(getenv( "CMSSW_BASE" )+string("/src/NTuple/NTupleAnalysis/macros/data/")+fileName);
+> 	string fullFileName(string("/opt/sbg/data/data1/cms/jandrea/JLAgram_06072012/CMSSW_4_2_8_patch7/src/NTuple/NTupleAnalysis/macros/data/")+fileName);
+379c397
+<   string fullFileName(getenv( "CMSSW_BASE" )+string("/src/MiniTreeAnalysis/NTupleAnalysis/macros/data/")+fileName);
+---
+>   string fullFileName(getenv( "CMSSW_BASE" )+string("/src/NTuple/NTupleAnalysis/macros/data/")+fileName);
+536,537c554,557
+<         if (quarkorigin==5 && pt>=240) pt=239;  // because limit in DB
+< 	if (quarkorigin==0 && pt>=520) pt=519;  // because limit in DB
+---
+>         // CARO
+>         // comment : limit in histo
+>         if (pt>=999.9) pt=999.1;  // because limit in histo
+>         if (eta>=2.5) pt=2.499;  // because limit in histo
+538a559,568
+> /*
+>         cout <<  " pt " << pt << " eta " << eta ;
+>         if (info==0) cout << " SF_" ;
+>         else if (info==1) cout << " ErrSF_" ;
+>         else cout << " another info " << info  << " " ;
+>         if (quarkorigin==4) cout << "c = " ; 
+>         else if (quarkorigin==5) cout << "b = " ;
+>         else if (quarkorigin==0) cout << "l = " ;
+>         cout << aa << endl;
+> */
+549a580,582
+> 
+> 
+> 
+556a590,593
+>        if (selJets.size()<1) {
+>          weight[0]=0.;
+>          return weight;
+>        }
+566c603,605
+<               if (pt_val_jet>1000.) pt_val_jet=997.;
+---
+>               if (pt_val_jet>670) pt_val_jet=670.;  // PROTECTION SF_ MUJETS + MISTAG
+>               if ((quarkorigin==4 || quarkorigin==5) && pt_val_jet<30) pt_val_jet=30.1;  // PROTECTION SF_b,c MUJETS
+> 
+573a613
+> 
+580c620
+<               // method_b = 2 : SF*Eff_MC
+---
+>               // method_b = 2 : SF*Eff_MC with error depending on SF only
+581a622
+>               // method_b = 4 : SF*Eff_MC with error depending on Eff only
+592c633
+<               if (pt_val_jet>200.) ptvaleff=199.;
+---
+>               if (pt_val_jet>200.) ptvaleff=199.; // limit in MC eff_ histo
+594,606d634
+<               float sf1=weight_jet;
+<               float ersf1=0;
+<               float eref1=0;
+<               float errw=0;
+<               if (method_b==3 && syst_b>0) {
+<                           ersf1=GetWeight(1,quarkorigin,pt_val_jet,eta_val_jet);
+<                           eref1=GetWeight(5,quarkorigin,ptvaleff,eta_val_jet);
+<                           errw=sqrt(ersf1*ersf1*eff_mc*eff_mc + sf1*sf1*eref1*eref1)/eff_mc;  // from SF and Eff
+<               }
+<               if (method_b==4 && syst_b>0) {
+<                           eref1=GetWeight(5,quarkorigin,ptvaleff,eta_val_jet);  // from Eff only
+<               }
+< 
+608,640c636,655
+<               if (syst_b==1) { //+ all
+<                     if (method_b==3) {
+<                           weight_jet+=errw;
+<                     }
+<                     else if (method_b==4) {
+<                           eff_mc+=eref1;
+<                     }
+<                     else {
+<                        weight_jet+=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+<               }
+<               else if (syst_b==2) { //- all
+<                     if (method_b==3) {
+<                           weight_jet-=errw;
+<                     }
+<                     else if (method_b==4) {
+<                           eff_mc-=eref1;
+<                     }
+<                     else {
+<                        weight_jet-=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+<               }
+<               else if (syst_b==3) { //+ only b!
+<                   if (quarkorigin==4|| quarkorigin==5) {
+<                     if (method_b==3) {
+<                           weight_jet+=errw;
+<                     }
+<                     else if (method_b==4) {
+<                           eff_mc+=eref1;
+<                     }
+<                     else {
+<                          weight_jet+=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+---
+>               // compute systematics
+>               if (syst_b>0) {
+>                   float error_for_systb=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);   
+>                  
+>                   if (method_b!=1) {
+> 
+>                      // method 0 and 2 : error on SF only
+>                      if      (pt_val_jet_orig<30. && (quarkorigin==5 || quarkorigin==4) )  error_for_systb=0.12;   // Err SF_b(<30) = 0.12;
+>                      else if (pt_val_jet_orig>670 )  error_for_systb*=2;                                           // Err SF_(>670) = 2* Err SF_(670);
+>                      if (quarkorigin==4) error_for_systb*=2.;                                                      // Err SF_c = 2* Err SF_b
+>                      
+>                      // method 3 : from SF and Eff
+>                      // method 4 : from Eff only
+>                      if (method_b>=3)  {
+>                       float sf1=weight_jet;
+>                       float err_sf1=error_for_systb;
+>                       float err_eff_mc=GetWeight(5,quarkorigin,ptvaleff,eta_val_jet);
+>                       if (method_b==3) error_for_systb=sqrt(err_sf1*err_sf1*eff_mc*eff_mc + sf1*sf1*err_eff_mc*err_eff_mc)/eff_mc;  // from SF and Eff
+>                       else if (method_b==4) error_for_systb=err_eff_mc; // from Eff only
+>                      }
+642,653c657,659
+<               }
+<               else if (syst_b==4) { //- only b!
+<                   if (quarkorigin==4|| quarkorigin==5) {
+<                     if (method_b==3) {
+<                           weight_jet-=errw;
+<                     }
+<                     else if (method_b==4) {
+<                           eff_mc-=eref1;
+<                     }
+<                     else {
+<                       weight_jet-=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+---
+>               
+>                   if (syst_b==1) { //+ all
+>                     weight_jet+=error_for_systb;
+655,666c661,662
+<               }
+<               else if (syst_b==5) { //+ only light!
+<                   if (quarkorigin==0) {
+<                     if (method_b==3) {
+<                           weight_jet+=errw;
+<                     }
+<                     else if (method_b==4) {
+<                           eff_mc+=eref1;
+<                     }
+<                     else {
+<                       weight_jet+=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+---
+>                   else if (syst_b==2) { //- all
+>                     weight_jet-=error_for_systb;
+668,679c664,665
+<               }
+<               else if (syst_b==6) { //- only light!
+<                   if (quarkorigin==0) {
+<                     if (method_b==3) {
+<                           weight_jet-=errw;
+<                     }
+<                     else if (method_b==4) {
+<                           eff_mc-=eref1;
+<                     }
+<                     else {
+<                        weight_jet-=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+---
+>                   else if (syst_b==3) { //+ only b!
+>                     if (quarkorigin==4|| quarkorigin==5)  { weight_jet+=error_for_systb; }
+681,692c667,668
+<               }
+<               else if (syst_b==7) { //+ b and - light!
+<                   if (quarkorigin==4|| quarkorigin==5) {
+<                     if (method_b==3) {
+<                           weight_jet+=errw;
+<                     }
+<                     else if (method_b==4) {
+<                           eff_mc+=eref1;
+<                     }
+<                     else {
+<                           weight_jet+=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+---
+>                   else if (syst_b==4) { //- only b!
+>                     if (quarkorigin==4|| quarkorigin==5)  { weight_jet-=error_for_systb; }
+694,703c670,671
+<                   else if (quarkorigin==0) {
+<                     if (method_b==3) {
+<                           weight_jet-=errw;
+<                     }
+<                     else if (method_b==4) {
+<                           eff_mc-=eref1;
+<                     }
+<                     else {
+<                          weight_jet-=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+---
+>                   else if (syst_b==5) { //+ only light!
+>                     if (quarkorigin==0)                   { weight_jet+=error_for_systb; }
+705,716c673,674
+<               }
+<               else if (syst_b==8) { //- b and + light!
+<                   if (quarkorigin==4|| quarkorigin==5) {
+<                     if (method_b==3) {
+<                           weight_jet-=errw;
+<                     }
+<                     else if (method_b==4) {
+<                           eff_mc-=eref1;
+<                     }
+<                     else {
+<                          weight_jet-=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+---
+>                   else if (syst_b==6) { //- only light!
+>                     if (quarkorigin==0)                   { weight_jet-=error_for_systb; }
+718,727c676,678
+<                   else if (quarkorigin==0) {
+<                     if (method_b==3) {
+<                           weight_jet+=errw;
+<                     }    
+<                     else if (method_b==4) {
+<                           eff_mc+=eref1;
+<                     }
+<                     else {
+<                           weight_jet+=GetWeight(info_b*2+1,quarkorigin,pt_val_jet,eta_val_jet);
+<                     }
+---
+>                   else if (syst_b==7) { //+ b and - light!
+>                     if (quarkorigin==4|| quarkorigin==5)  { weight_jet+=error_for_systb; }
+>                     else if (quarkorigin==0)              { weight_jet-=error_for_systb; }
+729c680,684
+<               }
+---
+>                   else if (syst_b==8) { //- b and + light!
+>                     if (quarkorigin==4|| quarkorigin==5)  { weight_jet-=error_for_systb; }
+>                     else if (quarkorigin==0)              { weight_jet+=error_for_systb; }
+>                   }
+>               } // end of syst
+761a717
+> 
+860a817
+> 
+863,888c820,846
+<   switch (algo) {
+<     case 0:
+<       return jet.GetDiscri(string("trackCountingHighEffBJetTags"));
+<       break;
+<     case 1:
+<       return jet.GetDiscri(string("simpleSecondaryVertexHighEffBJetTags"));
+<       break;
+<     case 2:
+<       return jet.GetDiscri(string("trackCountingHighPurBJetTags"));
+<       break;
+<     case 3:
+<       return jet.GetDiscri(string("simpleSecondaryVertexHighPurBJetTags"));
+<       break;
+<     case 4:
+<       return jet.GetDiscri(string("jetProbabilityBJetTags"));
+<       break;
+<     case 5:
+<       return jet.GetDiscri(string("jetBProbabilityBJetTags"));
+<       break;
+<     case 6:
+<       return jet.GetDiscri(string("combinedSecondaryVertexBJetTags"));
+<       break;
+<     default:
+<       cerr << "B-tag algorithm " << algo<< " doesn't exist !" << endl;
+<       return -10000000;
+<   }
+---
+>  switch (algo) {
+>    case 0:
+>      return jet.bTag["trackCountingHighEffBJetTags"];
+>      break;
+>    case 1:
+>      return jet.bTag["simpleSecondaryVertexHighEffBJetTags"];
+>      break;
+>    case 2:
+>      return jet.bTag["trackCountingHighPurBJetTags"];
+>      break;
+>    case 3:
+>      return jet.bTag["simpleSecondaryVertexHighPurBJetTags"];
+>      break;
+>    case 4:
+>      return jet.bTag["jetProbabilityBJetTags"];
+>      break;
+>    case 5:
+>      return jet.bTag["jetBProbabilityBJetTags"];
+>      break;
+>    case 6:
+>      return jet.bTag["combinedSecondaryVertexBJetTags"];
+>      break;
+>    default:
+>      cerr << "btagAlgo doesn't exist !" << endl;
+>      return -10000000;
+>      break;
+>    }

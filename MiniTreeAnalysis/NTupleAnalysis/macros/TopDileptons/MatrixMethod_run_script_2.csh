@@ -1,0 +1,25 @@
+cmsenv
+
+cd ..
+source setup.sh
+cd -
+
+./compile MatrixMethodGeneral_FastAnalysis_DATA_EMu.C
+./compile MatrixMethod_FastAnalysis_DATA_E.C
+./compile MatrixMethod_FastAnalysis_DATA_Mu.C
+./compile MatrixMethodGeneral_FastAnalysis_MC.C
+./compile MatrixMethod_FastAnalysis_MC.C
+
+./compile MatrixMethod_FastAnalysis_MC_PullTest.C
+./compile MatrixMethodGeneral_FastAnalysis_MC_PullTest.C
+./compile MatrixMethod_FastAnalysis_MC_EpsilonsTest.C 
+
+./MatrixMethodGeneral_FastAnalysis_DATA_EMu > MatrixMethodGeneral_FastAnalysis_DATA_EMu_log
+./MatrixMethod_FastAnalysis_DATA_E > MatrixMethod_FastAnalysis_DATA_E_log
+./MatrixMethod_FastAnalysis_DATA_Mu > MatrixMethod_FastAnalysis_DATA_Mu_log
+./MatrixMethodGeneral_FastAnalysis_MC > MatrixMethodGeneral_FastAnalysis_MC_log
+./MatrixMethod_FastAnalysis_MC > MatrixMethod_FastAnalysis_MC_log
+
+./MatrixMethod_FastAnalysis_MC_PullTest > MatrixMethod_FastAnalysis_MC_PullTest_log
+./MatrixMethodGeneral_FastAnalysis_MC_PullTest > MatrixMethodGeneral_FastAnalysis_MC_PullTest_log
+./MatrixMethod_FastAnalysis_MC_EpsilonsTest > MatrixMethod_FastAnalysis_MC_EpsilonsTest_log

@@ -1,0 +1,34 @@
+##################################i
+#   README   - PROOF
+##################################i
+
+##############################
+# Example: MacroProofExample.C
+##############################
+
+1- Possibilité de configurer le nombre de node,10 pour le moment:
+>nwnodes = 10
+
+2- Changer le fichier xml a parser. Il doit etre donner avec son chemin absolu
+>xmlFileName
+
+3- Changer la macro a executer. Celle-ci doit hériter de TSelector.
+Pour l'instant le fichier utiliser est: ProofSelectorExample.C
+>macroName
+
+4- Possibilite de changer le nom du fichier de sortie
+>outputFileName
+
+5- La compilation:
+> ./compile MacroProofExample.C
+
+6- Execution
+> ./MacroProofExample
+
+## Ajouter des histograms dans le display
+- Dans la MacroProofExample.C, rajouter le nom de l'histogram (pas le nom de la variable TH1F*) definie dans la macro "macroName"
+>proof->AddFeedback("fHist")
+- Dans la macro "macroName", ces histograms doivent etre rajouter dans le fichier "temporaire" de sortie
+>fOutput->Add(fHist);
+
+
