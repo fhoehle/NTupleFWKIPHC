@@ -152,7 +152,8 @@ string outputFileName = "proof.root";
     cout<<"################################################################"<<endl;
     
     gSystem->Load("/opt/sbg/data/data1/cms/jandrea/LHAPDF/lhapdf_versiontest/lib/libLHAPDF.so");
-    
+    std::string ntuplePath= gSystem->Getenv("NTUPLEANA_PATH");
+    //gSystem->Load((ntuplePath+std::string("/../libNTupleAna.so")).c_str()); 
     
     proof->Process(datasets[i].Name().c_str(),macroName.c_str());
     string newFileName = outputFileNameModif+"_"+datasets[i].Name()+".root";
