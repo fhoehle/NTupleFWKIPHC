@@ -1,0 +1,3 @@
+
+./compile MyVar.C
+./MyVar
