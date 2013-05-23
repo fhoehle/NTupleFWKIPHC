@@ -35,4 +35,9 @@ kill.sh
 .list_available_lib
 NTAna
 output_5217_log.txt
+canComparison_ee.root
+canComparison_emu.root
+canComparison_mumu.root
+failedFiles.txt
+output_6134_log.txt
 
